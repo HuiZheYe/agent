@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { GoogleGenAI } from "@google/genai";
+import { Analytics } from '@vercel/analytics/react';
 
 // Types
 interface Agent {
@@ -118,7 +119,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex text-[#111827]">
+    <>
+      <Analytics />
+      <div className="min-h-screen flex text-[#111827]">
       {/* Sidebar */}
       <nav className="w-64 border-r border-slate-200 bg-slate-100 flex flex-col p-6 space-y-8">
         <div className="flex items-center space-x-3">
@@ -461,5 +464,6 @@ export default function App() {
         </AnimatePresence>
       </main>
     </div>
+    </>
   );
 }
